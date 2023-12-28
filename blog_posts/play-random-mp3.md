@@ -39,5 +39,4 @@ To play something from the search results, we can simply copy/paste the filename
 
 See also:
 
-- [Bash one-liner: List mp3 music ID3v2 tag genre stats](https://bretttolbert.com/bash-one-liner-list-mp3-music-id3v2-tag-genre-stats)
-
+- [Bash one-liner: List mp3 music ID3v2 tag genre stats](./list-mp3-id3-tags.md)
