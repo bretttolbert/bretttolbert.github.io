@@ -1,3 +1,3 @@
 # Brett Tolbert
 
-* [Blog](./blog_posts/)
+* [Blog](./blog/)
