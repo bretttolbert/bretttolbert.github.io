@@ -1,0 +1,15 @@
+# Brett Tolbert's Blog
+
+* [Bash Tip: How to recall a specific command from Bash history and edit it before executing it again](./bash-tip-history.md)
+* [Ubuntu Budgie 21.04 installation notes](./budgie-install-notes.md)
+* [How to add Keyboard Layout indicator to top panel in Ubuntu Budgie 21.10](./budgie-kb-layout.md)
+* [Using ffmpeg to a make TikTok video with a SoundCloud-style Ken Burns panning effect](ffmpeg-Ken-Burns.md)
+* [Bash one-liner: record video and audio from webcam and Blue Yeti microphone](./ffmpeg-record-Blue-Yeti.md)
+* [Git Bash - a handy Bash shell for Windows](./git-bash.md)
+* [Creating tree graphs with graphviz](./graphviz-tree-graphs.md)
+* [Bash one-liner: List mp3 music ID3v2 tag genre stats](./list-mp3-id3-tags.md)
+* [How to trick pip into listing every available version of a package](./pip-trick.md)
+* [Bash one-liner: Play a random .mp3 or .m4a file](./play-random-mp3.md)
+* [How to add Monokai dark highlighting theme to IDLE Python Shell](./python-idle-theme.md)
+* [Python Send Email (2013)](./python-send-email.md)
+* [Using multiple SSH keys for different GitHub accounts](./using-multiple-ssh-keys.md)

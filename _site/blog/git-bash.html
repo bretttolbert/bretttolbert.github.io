@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Git Bash - a handy Bash shell for Windows | Brett Tolbert</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Git Bash - a handy Bash shell for Windows" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Software Developer" />
+<meta property="og:description" content="Software Developer" />
+<link rel="canonical" href="http://localhost:4000/blog/git-bash.html" />
+<meta property="og:url" content="http://localhost:4000/blog/git-bash.html" />
+<meta property="og:site_name" content="Brett Tolbert" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Git Bash - a handy Bash shell for Windows" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Software Developer","headline":"Git Bash - a handy Bash shell for Windows","url":"http://localhost:4000/blog/git-bash.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Brett Tolbert" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Brett Tolbert</a>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon"></span>
+        </label>
+
+        <div class="nav-items">
+  <a class="nav-item" href="/about/">About</a>
+  <a class="nav-item" href="/README.html">bretttolbert.github.io</a>
+  <a class="nav-item" href="/blog/banana-pi-clock.html">How to turn a Banana Pi (or Raspberry Pi) into a clock</a>
+  <a class="nav-item" href="/blog/bash-tip-history.html">Bash Tip: How to recall a specific command from Bash history and edit it before executing it again</a>
+  <a class="nav-item" href="/blog/budgie-install-notes.html">Ubuntu Budgie 21.04 installation notes</a>
+  <a class="nav-item" href="/blog/budgie-kb-layout.html">How to add Keyboard Layout indicator to top panel in Ubuntu Budgie 21.10</a>
+  <a class="nav-item" href="/blog/ffmpeg-Ken-Burns.html">Using ffmpeg to a make TikTok video with a SoundCloud-style Ken Burns panning effect</a>
+  <a class="nav-item" href="/blog/ffmpeg-record-Blue-Yeti.html">Bash one-liner: record video and audio from webcam and Blue Yeti microphone</a>
+  <a class="nav-item" href="/blog/git-bash.html">Git Bash - a handy Bash shell for Windows</a>
+  <a class="nav-item" href="/blog/graphviz-tree-graphs.html">Creating tree graphs with graphviz</a>
+  <a class="nav-item" href="/blog/">Brett Tolbert’s Blog</a>
+  <a class="nav-item" href="/blog/list-mp3-id3-tags.html">Bash one-liner: List mp3 music ID3v2 tag genre stats</a>
+  <a class="nav-item" href="/blog/pip-trick.html">How to trick pip into listing every available version of a package</a>
+  <a class="nav-item" href="/blog/play-random-mp3.html">Bash one-liner: Play a random .mp3 or .m4a file</a>
+  <a class="nav-item" href="/blog/plots.html">I’m plotting some things</a>
+  <a class="nav-item" href="/blog/python-idle-theme.html">How to add Monokai dark highlighting theme to IDLE Python Shell</a>
+  <a class="nav-item" href="/blog/python-send-email.html">Python Send Email</a>
+  <a class="nav-item" href="/blog/using-multiple-ssh-keys.html">Using multiple SSH keys for different GitHub accounts</a>
+  <a class="nav-item" href="/">Brett Tolbert</a>
+</div>
+
+      </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Git Bash - a handy Bash shell for Windows</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="git-bash---a-handy-bash-shell-for-windows">Git Bash - a handy Bash shell for Windows</h1>
+
+<p>Git Bash is a MINGW64 Bash shell optionally included with Git For Windows. It’s a handy way to have a Bash shell in a Windows environment. Of course these days you could use the Windows 10 WSL (Windows Subsystem for Linux) to run a full-fledged Linux distro but I find Git Bash gets the job done and I’ve used it for many years. However there are a few gotchas. Read on to learn how to overcome them.</p>
+
+<h2 id="gotchas">Gotchas</h2>
+
+<p>If it hangs up when you run commands like <code class="language-plaintext highlighter-rouge">python</code> or <code class="language-plaintext highlighter-rouge">pytest</code>, try putting <code class="language-plaintext highlighter-rouge">winpty</code> in front of them or even better, set up some aliases in your bash profile:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "alias python='winpty python.exe'" &gt;&gt; ~/.bashrc
+echo "alias pytest='winpty pytest.exe'" &gt;&gt; ~/.bashrc
+echo "alias docker='winpty docker.exe'" &gt;&gt; ~/.bashrc
+</code></pre></div></div>
+<p>You will need to exit and reopen Git Bash shell for the alias to take effect.</p>
+
+<h3 id="docker-with-git-bash">Docker with Git Bash</h3>
+
+<p>Another issue I’ve encountered is that when you’re doing a <code class="language-plaintext highlighter-rouge">docker run</code> in interactive mode it fails to find <code class="language-plaintext highlighter-rouge">/bin/sh</code> but this can be easily solved by using <code class="language-plaintext highlighter-rouge">//bin//sh</code> instead. Observe:</p>
+
+<p><code class="language-plaintext highlighter-rouge">/bin/sh</code> doesn’t work:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brett_svql3er@DESKTOP-Q20M58F MINGW64 ~/Git/uvicorn-gunicorn-sklearn-docker (master)
+$ docker run -it bretttolbert/uvicorn-gunicorn-sklearn:python3.8-alpine3.10 /bin/sh
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:367: starting container process caused: exec: "C:/Program Files/Gi
+t/usr/bin/sh.exe": stat C:/Program Files/Git/usr/bin/sh.exe: no such file or directory: unknown.
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">//bin//sh</code> Works:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brett_svql3er@DESKTOP-Q20M58F MINGW64 ~/Git/uvicorn-gunicorn-sklearn-docker (master)
+$ docker run -it bretttolbert/uvicorn-gunicorn-sklearn:python3.8-alpine3.10 //bin//sh
+/app #
+</code></pre></div></div>
+
+<h3 id="java-with-git-bash">Java with git-bash</h3>
+
+<p>The PATH environment variable determines which Java JRE will be used.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $PATH
+java -verbose
+export PATH=/d/jre-1.8.0/bin:$PATH
+java -verbose
+</code></pre></div></div>
+
+<p>Tip: If you ever run into issues like “<code class="language-plaintext highlighter-rouge">/bin/sh</code> program not found”, try <code class="language-plaintext highlighter-rouge">//bin//sh</code> or just <code class="language-plaintext highlighter-rouge">sh</code>.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+      </div>
+      <div class="footer-col">
+        <p>Software Developer</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="http://localhost:4000/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
