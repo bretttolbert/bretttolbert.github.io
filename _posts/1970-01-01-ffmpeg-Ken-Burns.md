@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Ubuntu Budgie 21.04 installation notes"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
+
+
 # Using ffmpeg to a make TikTok video with a SoundCloud-style Ken Burns panning effect
 
 Use case: you want to upload your OC music recording to TikTok but you only have audio and TikTok requires video. What to do? Well, you can find a high-resolution image and generate a video from it and your recorded audio file using ffmpeg. Here's how:

@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Ubuntu Budgie 21.04 installation notes"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
+
+
 # How to add Keyboard Layout indicator to top panel in Ubuntu Budgie 21.10
 
 Right click desktop and select `Desktop Settings`

@@ -1,4 +1,9 @@
-# Using multiple SSH keys for different GitHub accounts
+---
+layout: post
+title:  "Using multiple SSH keys for different GitHub accounts"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
 
 Consider that these are the normal steps to add a new repo to github:
 

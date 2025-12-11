@@ -1,4 +1,9 @@
-# Ubuntu Budgie 21.04 installation notes
+---
+layout: post
+title:  "Ubuntu Budgie 21.04 installation notes"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
 
 Update: This article is outdated. Ubuntu Budgie 21.10 is now the current version and I have upgraded to it and suggest you do the same. Most of the info below still applies to 21.10.
 -----------------------------------------------------------------------------------------

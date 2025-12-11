@@ -1,4 +1,9 @@
-# Python Send Email
+---
+layout: post
+title:  "Python Send Email"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
 
 This is a repost I wrote in 2013
 

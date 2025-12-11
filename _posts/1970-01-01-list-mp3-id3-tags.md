@@ -1,4 +1,9 @@
-# Bash one-liner: List mp3 music ID3v2 tag genre stats
+---
+layout: post
+title:  "Bash one-liner: List mp3 music ID3v2 tag genre stats"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
 
 ID3 is the language of the metadata in your mp3 (or m4a) files. There are two major versions of ID3 tags: ID3v1 and ID3v2. ID3v2 has many features such as custom genre tags. Gone are the days of ID3v1 which limited users to a small set of predefined genre tags.
 

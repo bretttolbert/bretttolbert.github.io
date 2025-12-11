@@ -1,4 +1,9 @@
-# Bash Tip: How to recall a specific command from Bash history and edit it before executing it again
+---
+layout: post
+title:  "Bash Tip: How to recall a specific command from Bash history and edit it before executing it again"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
 
 In Bash, the `history` command displays previously executed statements. You can re-execute any line displayed in history by using `!` followed by the line number in the `history` output. E.g. `!499`. This will cause Bash to immediately re-execute that line. 
 

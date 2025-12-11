@@ -1,4 +1,9 @@
-# How to turn a Banana Pi (or Raspberry Pi) into a clock
+---
+layout: post
+title:  "How to turn a Banana Pi (or Raspberry Pi) into a clock"
+date:   2025-11-01 00:00:00 -0600
+categories: dev
+---
 
 1. Install NGINX. Copy HTML file for clock.
 

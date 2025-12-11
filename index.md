@@ -1,6 +1,3 @@
-# Brett Tolbert
-
-* [Blog](./blog/)
 * [bretttolbert.com](https://bretttolbert.com)
 
 ## Open Source Software Projects

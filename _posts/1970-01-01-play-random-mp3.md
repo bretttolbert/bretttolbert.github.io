@@ -1,4 +1,9 @@
-# Bash one-liner: Play a random .mp3 or .m4a file
+---
+layout: post
+title:  "Bash one-liner: Play a random .mp3 or .m4a file"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
 
 Here's the one-liner:
 

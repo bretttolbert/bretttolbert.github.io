@@ -1,4 +1,9 @@
-# How to add Monokai dark highlighting theme to IDLE Python Shell
+---
+layout: post
+title:  "How to add Monokai dark highlighting theme to IDLE Python Shell"
+date:   1970-01-01 00:00:00 -0600
+categories: dev
+---
 
 Want to make your IDLE Python Shell look like Sublime Text's default theme (Monokai)? Here's how:
 
