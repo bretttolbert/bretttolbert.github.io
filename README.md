@@ -1,2 +1,2 @@
-# bretttolbert.github.io
-Brett Tolbert's Blog
+* [bretttolbert.com](https://bretttolbert.com)
+* [bretttolbert.github.io](https://bretttolbert.github.io)
