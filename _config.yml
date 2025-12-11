@@ -1,13 +1,24 @@
+title: Brett Tolbert
+description: Software Developer
+email: bretttolbert@gmail.com
+baseurl: ""
+url: "https://bretttolbert.github.io"
+repository: bretttolbert/bretttolbert.github.io # used by the jekyll-github-metadata plugin
+
+theme: jekyll-theme-midnight # Use a GitHub Pages supported theme see https://github.com/pages-themes/
+
 plugins:
   - jekyll-relative-links
 relative_links:
   enabled: true
   collections: true
-include:
-  - README.md
-  - LICENSE
+
 markdown: kramdown
+
 sass:
   sass_dir: _sass
   style: compressed
-remote_theme: flancast90/millidocs-dark
+
+include:
+  - README.md
+  - LICENSE
