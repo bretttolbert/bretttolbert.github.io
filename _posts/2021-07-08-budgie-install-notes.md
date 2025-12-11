@@ -122,15 +122,15 @@ In addition to being slow, the mouse cursor appears laggy with 4K resolution. As
 
 Anyway I found it can be improved somewhat by changing the following in NVIDIA X Server Settings: *X Server Display Configuration* -> then for each monitor -> *Advanced* -> *[✓] Force Full Composition Pipeline*. 
 
-![Screenshot from 2021-07-08 19-01-34.png](nvidia-x-server-settings.png)
+![Screenshot from 2021-07-08 19-01-34.png](/assets/images/nvidia-x-server-settings.png)
 
-![Screenshot from 2021-07-08 19-00-43.png](nvidia-x-server-settings-2.png)
+![Screenshot from 2021-07-08 19-00-43.png](/assets/images/nvidia-x-server-settings-2.png)
 
 ## Requirements for dual 4k monitors
 
 Unfortunately I found that my graphics card (Nvidia GTX 550 Ti) is incapable of driving dual 4K monitors at 60 FPS, due to the limitations of DVI ports. In fact it was running at a mere 23.98 FPS, according to the `xrandr` output:
 
-![Screenshot from 2021-07-10 09-03-42.png](xrandr.png)
+![Screenshot from 2021-07-10 09-03-42.png](/assets/images/xrandr.png)
 
 The reason is due to my graphics card which only has two DVI ports. A single DVI port doesn't have enough bandwidth to run 4K at 60 FPS. It's possible with two DVI ports, but I'm trying to run not one but two 4K monitors. These days the newest cards have HDMI 2.1 and DisplayPort 1.4b ports that can deliver 4K to dual monitors without issue. 
 
