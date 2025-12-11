@@ -5,7 +5,15 @@ baseurl: ""
 url: "https://bretttolbert.github.io"
 repository: bretttolbert/bretttolbert.github.io # used by the jekyll-github-metadata plugin
 
-theme: jekyll-theme-cayman # Use a GitHub Pages supported theme see https://github.com/pages-themes/
+#theme: jekyll-theme-cayman # Use a GitHub Pages supported theme see https://github.com/pages-themes/
+# In _config.yml
+# theme: minima
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-remote-theme
+minima:
+  skin: dark # Or auto if you want it to switch with your system settings.
+
 
 plugins:
   - jekyll-relative-links
