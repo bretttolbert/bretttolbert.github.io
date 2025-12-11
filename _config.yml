@@ -10,3 +10,4 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
+remote_theme: flancast90/millidocs-dark
