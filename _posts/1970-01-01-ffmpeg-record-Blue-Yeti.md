@@ -1,12 +1,9 @@
 ---
 layout: post
-title:  "Ubuntu Budgie 21.04 installation notes"
+title:  "Bash one-liner: record video and audio from webcam and Blue Yeti microphone"
 date:   1970-01-01 00:00:00 -0600
 categories: dev
 ---
-
-
-# Bash one-liner: record video and audio from webcam and Blue Yeti microphone
 
 Here's the one-liner:
 
