@@ -5,6 +5,10 @@ date:   2025-11-01 00:00:00 -0600
 categories: dev
 ---
 
+![banana pi clock](/assets/images/banana-pi-clock_PXL_20251107_012055474.jpg)
+
+![banana pi clock - closeup](/assets/images/banana-pi-clock_PXL_20251211_133501326.jpg)
+
 1. Install NGINX. Copy HTML file for clock.
 
 ```bash

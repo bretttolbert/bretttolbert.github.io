@@ -11,7 +11,7 @@ I got frustrated with putting effort into playlists only to lose them, so I have
 
 Some older tools like `mp3info` can´t read ID3v2 tags, and `id3v2` can't read ID3v2.4 tags, so I recommend `ffprobe`. Demo:
 
-```
+```bash
 $ find /data/Music -type f \( -iname "*.mp3" -o -iname "*.m4a" \) -exec ffprobe {} \; 2>&1 | egrep "genre" | sort | uniq -c | sort -rn -k1.4,7
    1182     genre           : Indie Rock
     915     genre           : Classic Rock
@@ -114,7 +114,7 @@ For ripping CDs, I recommend `K3b`.
 
 
 Addendum: Ignore my first attempt below using the `id3v2` command, as you can see, it was not counting most of my tags (id3v2.4?). `ffprobe` is the way to go, even though it's much slower.
-```
+```bash
 $ find /data/Music -type f \( -iname "*.mp3" -o -iname "*.m4a" \) -exec id3v2 -R {} \; | grep TCON | sed "s/TCON://" | sort | uniq -c | sort -rn -k1.4,7
     668  Classic Rock (1)
     568  Classic Prog (255)

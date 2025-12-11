@@ -7,26 +7,26 @@ categories: dev
 
 Here's the one-liner:
 
-```
+```bash
 find /data/Music -type f \( -iname "*.mp3" -o -iname "*.m4a" \) -print | shuf -n 1 | xargs --delimiter '\n' vlc --play-and-exit
 ```
 
 But rather than type all that every time we want to listen to music, let's put it in a script file, or rather three script files, and add a **repeat** feature:
 
 `PrintAudioFiles`
-```
+```bash
 #!/bin/bash
 find "$1" -type f \( -iname "*.mp3" -o -iname "*.m4a" \) -print
 ```
 
 `Shuffle1`
-```
+```bash
 #!/bin/bash
 source PrintAudioFiles "$1" | shuf -n 1 | xargs --delimiter '\n' vlc --play-and-exit
 ```
 
 `ShuffleForever`
-```
+```bash
 #!/bin/bash
 while :
 do

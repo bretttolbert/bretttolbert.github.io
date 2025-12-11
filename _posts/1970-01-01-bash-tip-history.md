@@ -10,7 +10,8 @@ In Bash, the `history` command displays previously executed statements. You can 
 Oftentimes, however, you'll want to edit the line before re-executing it. In that case, you can add the `:p` suffix which tells Bash to just print the line instead of actually executing it. E.g. `!499:p`. Then you can just hit the Up-Arrow to recall the line you just re-printed, giving you the chance to edit it before pressing Enter.
 
 You can also use `!-1` to immediately execute the previously executed command. This may not be any quicker than Up-Arrow Enter but it's useful for appending the previous command into a startup script, i.e. making it persistent:
-```
+
+```bash
 export PATH=~/Scripts:$PATH
 echo "!-1" >> ~/.bashrc
 ```

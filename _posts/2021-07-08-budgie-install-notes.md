@@ -1,12 +1,11 @@
 ---
 layout: post
 title:  "Ubuntu Budgie 21.04 installation notes"
-date:   1970-01-01 00:00:00 -0600
+date:   2021-07-08 19-11-25 -0600
 categories: dev
 ---
 
-Update: This article is outdated. Ubuntu Budgie 21.10 is now the current version and I have upgraded to it and suggest you do the same. Most of the info below still applies to 21.10.
------------------------------------------------------------------------------------------
+**Update: This article is outdated, although much of the info below is likely still applicable. Full disclosure: I no longer use Ubuntu Budgie.**
 
 I recently decided to give Ubuntu Budgie a try. Here are a few notes documenting my 
 experience setting up Ubuntu Budgie 21.04 to dual-boot alongside Windows 10 on an older i7 PC with dual 4K monitors (spoiler: I found my current graphics card is incapable of running dual 4K monitors at 60 FPS so I'm stuck with 1920x1080 until I decide to splurge on a new graphics card).
@@ -26,7 +25,7 @@ Older systems like mine use BIOS. In most modern systems, BIOS has been largely 
 
 MBR (Master Boot Record) and GPT (GUID Partition Table) are two different ways to partition disks. Older systems like mine are more likely to use MBR (sometimes referred to as `msdos`). Newer systems or Linux systems typically use GPT. MBR partitions are limited to 2 TB in size. If you have a larger drive, you must use GPT. You can use the command `sudo parted -l` to see which type you have.
 
-![Screenshot from 2021-07-08 19-11-25.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625789501382/gFAQC1Ko-E.png)
+![Screenshot from 2021-07-08 19-11-25.png](/assets/images/parted.png)
 
 ## Installation and graphics drivers
 
@@ -34,10 +33,10 @@ Following traditional wisdom, I installed Windows first before installing Ubuntu
 
 I have an Nvidia GTX 550 Ti graphics card. The live USB installer was initially booting to a blank screen. I had to use the "Safe Graphics" option for the install. Then after installation, my screen was going blank immediately after choosing Ubuntu at the Grub bootloader screen. As a temporary workaround, I edited the Grub to add the `nomodeset` argument:
 
-![Screenshots_2021-07-06-08-12-15.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625583299729/2dyrvlx8V.png)
+![edit Grub configuration](/assets/images/grub.png)
 
 Then I was able to boot into Ubuntu Budgie and install updates and additional proprietary drivers. This caused it to install the `nvidia-driver-460` by default. Unfortunately after rebooting, I found that it was again booting to a blank screen. After some research I found the fix was to disable my integrated VGA graphics in BIOS. That got me past the blank screen but it was still stuck on a low resolution and not detecting my second monitor. I fixed this by installing the `nvidia-driver-390` driver with the command below (which also removes the 460 driver):
-```
+```bash
 sudo apt install nvidia-driver-390
 ```
 
@@ -50,12 +49,12 @@ The vertical scroll is very slow. It's especially notable in web pages. I couldn
 Go to `about:config`
 
 Increase vertical factor from `200` to `400`:
-```
+```bash
 mousewheel.system_scroll_override_on_root_content.vertical.factor
 ```
 
 and then you have to enable the scroll setting override by changing this to `true`:
-```
+```bash
 mousewheel.system_scroll_override_on_root_content.enabled
 ```
 
@@ -64,7 +63,7 @@ mousewheel.system_scroll_override_on_root_content.enabled
 I also increased the pointer speed in the Budgie *Mouse* settings, but I found with 4K resolution it was still too slow even with the max setting. First I tried adjusting the pointer control acceleration and threshold, but it didn't have any noticeable effect. TLDR I wrote the scripts below to tweak the mouse pointer settings:
 
 GetMouseSpeed.sh
-```
+```bash
 #!/bin/bash
 DEVICE="Logitech Wireless Mouse"
 xset q | grep -A 1 Pointer
@@ -73,7 +72,7 @@ xinput list-props "$DEVICE" | grep "Coordinate Transformation Matrix"
 ```
 
 SetMouseSpeed.sh
-```
+```bash
 #!/bin/bash
 DEVICE="Logitech Wireless Mouse"
 if [ "$#" -ne 4 ]; then
@@ -88,7 +87,7 @@ source GetMouseSpeed.sh
 ```
 
 Demo:
-```
+```bash
 brett@brett-Z68XP-UD4:~/Scripts$ ./GetMouseSpeed.sh 
 Pointer Control:
   acceleration:  1/1    threshold:  4
@@ -110,7 +109,7 @@ Note: I don't believe the `xset m <acceleration> <threshold>` actually has any e
 
 Make it permanent
 
-```
+```bash
 export PATH=~/Scripts:$PATH
 echo "!-1" >> ~/.bashrc
 SetMouseSpeed.sh 1/1 4 1 2.2
@@ -123,15 +122,15 @@ In addition to being slow, the mouse cursor appears laggy with 4K resolution. As
 
 Anyway I found it can be improved somewhat by changing the following in NVIDIA X Server Settings: *X Server Display Configuration* -> then for each monitor -> *Advanced* -> *[✓] Force Full Composition Pipeline*. 
 
-![Screenshot from 2021-07-08 19-01-34.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625788947182/aDL1Yxg-c.png)
+![Screenshot from 2021-07-08 19-01-34.png](nvidia-x-server-settings.png)
 
-![Screenshot from 2021-07-08 19-00-43.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625788959596/p_hgunj5i.png)
+![Screenshot from 2021-07-08 19-00-43.png](nvidia-x-server-settings-2.png)
 
 ## Requirements for dual 4k monitors
 
 Unfortunately I found that my graphics card (Nvidia GTX 550 Ti) is incapable of driving dual 4K monitors at 60 FPS, due to the limitations of DVI ports. In fact it was running at a mere 23.98 FPS, according to the `xrandr` output:
 
-![Screenshot from 2021-07-10 09-03-42.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625925845826/pf5NvKo8-.png)
+![Screenshot from 2021-07-10 09-03-42.png](xrandr.png)
 
 The reason is due to my graphics card which only has two DVI ports. A single DVI port doesn't have enough bandwidth to run 4K at 60 FPS. It's possible with two DVI ports, but I'm trying to run not one but two 4K monitors. These days the newest cards have HDMI 2.1 and DisplayPort 1.4b ports that can deliver 4K to dual monitors without issue. 
 
@@ -152,27 +151,32 @@ To find your UUID, run `sudo blkid` to see the UUID for every device. If you do 
 To find your username, run `whoami`. Queue Supertramp-*please tell me who I ammmm, who I ammmm, who I ammmm, who I ammmmmmm*
 
 Create the mount point (I chose something much shorter than the default, for convenience):
-```
+```bash
 sudo mkdir /data
 ```
+
 Create a new permissions group for whoever/whatever should have access to the drive:
-```
+```bash
 sudo groupadd data
 ```
+
 Add your account to the group:
-```
+```bash
 sudo usermod -aG data brett
 ```
+
 Change the owner of the mountpoint:
-```
+```bash
 sudo chown -R :data /data
 ```
+
 Append an fstab entry:
-```
+```bash
 sudo echo 'UUID=F458A3F358A3B2B2 /data    auto nosuid,nodev,nofail,x-gvfs-show 0 0' | sudo tee -a /etc/fstab
 ```
+
 Before rebooting, test with:
-```
+```bash
 sudo mount -a
 ```
 
@@ -195,7 +199,7 @@ Just keep hitting `Ctrl +` until it's big enough to see on 4K monitors.
 `sudo apt install vim`
 
 ~/.vimrc
-```
+```bash
 set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -209,7 +213,7 @@ set backspace=2
 ## Installing Sublime Text
 
 (replace 4107 with latest version)
-```
+```bash
 curl https://download.sublimetext.com/sublime_text_build_4107_x64.tar.xz -O
 tar xf sublime_text_build_4107_x64.tar.xz
 sudo mv sublime_text /opt/
@@ -221,7 +225,7 @@ echo "!-1" >> ~/.bashrc
 ## Upgrading Sublime Text
 
 (replace 4113 with latest version)
-```
+```bash
 curl https://download.sublimetext.com/sublime_text_build_4113_x64.tar.xz -O
 tar xf sublime_text_build_4113_x64.tar.xz
 sudo cp -r sublime_text /opt/
@@ -230,14 +234,14 @@ rm -rf sublime_text
 
 ## Installing Beyond Compare 4
 
-```
+```bash
 curl https://www.scootersoftware.com/bcompare-4.3.7.25118_amd64.deb -O
 sudo dpkg -i bcompare-4.3.7.25118_amd64.deb
 ```
 
 ## Installing Git
 
-```
+```bash
 sudo apt install git
 ssh-keygen -t ed25519 -C "bretttolbert@gmail.com"
 eval "$(ssh-agent -s)"

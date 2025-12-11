@@ -1,19 +1,17 @@
 title: Brett Tolbert
 description: Software Developer
 email: bretttolbert@gmail.com
-baseurl: ""
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bretttolbert.github.io"
 repository: bretttolbert/bretttolbert.github.io # used by the jekyll-github-metadata plugin
+github_username:  bretttolbert
 
-#theme: jekyll-theme-cayman # Use a GitHub Pages supported theme see https://github.com/pages-themes/
-# In _config.yml
 # theme: minima
 remote_theme: jekyll/minima
 plugins:
   - jekyll-remote-theme
 minima:
   skin: dark # Or auto if you want it to switch with your system settings.
-
 
 plugins:
   - jekyll-relative-links

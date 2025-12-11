@@ -14,7 +14,7 @@ Requirements:
 * Python 2.7.x
 * [VideoCapture](http://videocapture.sourceforge.net/)
 
-```
+```bash
 import os
 import smtplib
 import datetime

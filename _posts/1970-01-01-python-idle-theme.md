@@ -11,7 +11,7 @@ First find your `.idlerc` folder. On Windows, you can get there by going to `%us
 
 Next copy the following config into a new text file in the `.idlerc` directory with the filename `config-highlight.cfg`:
 
-```
+```bash
 # Place this  file inside your ~/.idlerc/ folder
 # or paste its contents inside 
 # /path/to/python/idlelib/config-highlight.def
