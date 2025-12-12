@@ -34,4 +34,4 @@ dot -Tpng life.gv -o life.png
 
 ![life.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1627223890233/54jVdFQfs.png)
 
-
+[Taxonomy of Political Ideologies Tree Graph (graphviz dot file)](https://gist.github.com/bretttolbert/ea7b0efe6eafa6da629a29e915b57e5a)
