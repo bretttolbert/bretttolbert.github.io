@@ -11,3 +11,10 @@
     * [github.com/bretttolbert/verbecc](https://github.com/bretttolbert/verbecc)
     * [github.com/bretttolbert/verbecc-svc](https://github.com/bretttolbert/verbecc-svc)
     * [github.com/bretttolbert/verbecc-web](https://github.com/bretttolbert/verbecc-web)
+* misc older projects
+    * colorscale
+        * [demo](https://bretttolbert.com/assets/projects/colorscale/index.html)
+        * [github](https://github.com/bretttolbert/colorscale)
+    * mazegenerator
+        * [demo](https://bretttolbert.com/assets/projects/mazegenerator/index.html)
+        * [github](https://github.com/bretttolbert/mazegenerator)
