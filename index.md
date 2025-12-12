@@ -1,17 +1,28 @@
 * [bretttolbert.com](https://bretttolbert.com)
 
 ## Open Source Software Projects
-* mediaserver
-    * [bretttolbert.com/mediaserver](https://bretttolbert.com/mediaserver)
-    * [github.com/bretttolbert/mediaserver](https://github.com/bretttolbert/mediaserver)
-    * [github.com/bretttolbert/mediascan](https://github.com/bretttolbert/mediascan)
-    * [github.com/bretttolbert/mediatest](https://github.com/bretttolbert/mediatest)
+* mediax
+    * mediaserver
+        * [demo](https://bretttolbert.com/mediaserver)
+        * [github](https://github.com/bretttolbert/mediaserver)
+    * mediascan
+        * [github](https://github.com/bretttolbert/mediascan)
+    * mediatest
+        * [github](https://github.com/bretttolbert/mediatest)
 * verbecc
-    * [verbe.cc](https://verbe.cc)
-    * [github.com/bretttolbert/verbecc](https://github.com/bretttolbert/verbecc)
-    * [github.com/bretttolbert/verbecc-svc](https://github.com/bretttolbert/verbecc-svc)
-    * [github.com/bretttolbert/verbecc-web](https://github.com/bretttolbert/verbecc-web)
+    * verbecc-web
+        * [demo (verbe.cc)](https://verbe.cc)
+        * [github](https://github.com/bretttolbert/verbecc-web)
+    * verbecc
+        * [github](https://github.com/bretttolbert/verbecc)
+        * [pypi](https://pypi.org/project/verbecc/)
+    * verbecc-svc
+        * [github](https://github.com/bretttolbert/verbecc-svc)
+
 * misc older projects
+    * mapgraph
+        * [demo](https://bretttolbert.com/assets/projects/mapgraph/mapgraph.php?map=us-counties)
+        * [github](https://github.com/bretttolbert/mapgraph)
     * flagsgame
         * [demo](https://bretttolbert.com/assets/projects/flagsgame/index.html)
         * [github](https://github.com/bretttolbert/flagsgame)
@@ -21,3 +32,6 @@
     * colorscale
         * [demo](https://bretttolbert.com/assets/projects/colorscale/index.html)
         * [github](https://github.com/bretttolbert/colorscale)
+    * npuzzle
+        * [demo](http://bretttolbert.com/assets/projects/npuzzle/index.html)
+        * [github](https://github.com/bretttolbert/misc/web/npuzzle)
