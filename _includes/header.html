@@ -1,0 +1,24 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKLELNDZKB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FKLELNDZKB');
+</script>
+
+<div class="wrapper">
+  <a class="site-title" rel="author" href="/">{{ site.title | escape }}</a>
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon"></span>
+      </label>
+      <div class="nav-items">
+        {% for link in site.data.navigation.main %}
+        <a {% if page.url == link.url %}class="active nav-item"{% else %}class="nav-item"{% endif %} href="{{ link.url }}">{{ link.title | escape }}</a>
+        {% endfor %}
+      </div>
+  </nav>
+</div>

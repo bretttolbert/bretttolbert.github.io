@@ -1,4 +1,7 @@
-* [bretttolbert.com](https://bretttolbert.com)
+---
+title: Blog
+permalink: /
+---
 
 ## Open Source Software Projects
 * mediax
