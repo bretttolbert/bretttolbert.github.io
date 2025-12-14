@@ -24,7 +24,7 @@ permalink: /
 
 * misc older projects
     * mapgraph
-        * [demo](https://bretttolbert.com/assets/projects/mapgraph/mapgraph.php?map=us-counties)
+        * [demo](https://bretttolbert.com/assets/projects/mapgraph/mapgraph.php?map=us-counties&mode=graph&dataset=2024-census-pop-est)
         * [github](https://github.com/bretttolbert/mapgraph)
     * flagsgame
         * [demo](https://bretttolbert.com/assets/projects/flagsgame/index.html)
