@@ -1,6 +1,7 @@
 ---
 title: Blog
 permalink: /
+layout: home
 ---
 
 ## Open Source Software Projects
