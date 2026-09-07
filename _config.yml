@@ -1,5 +1,5 @@
 title: Brett Tolbert
-description: Software Developer
+description: ©2026 Brett Tolbert. All Rights Reserved.
 email: bretttolbert@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://bretttolbert.github.io"
@@ -10,11 +10,11 @@ github_username:  bretttolbert
 remote_theme: jekyll/minima
 plugins:
   - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-relative-links
 minima:
   skin: dark # Or auto if you want it to switch with your system settings.
 
-plugins:
-  - jekyll-relative-links
 relative_links:
   enabled: true
   collections: true
