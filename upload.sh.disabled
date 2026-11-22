@@ -1,0 +1,5 @@
+#!/bin/bash
+# if you are self-hosting, you can uncomment this and use it.
+# I'm letting github pages host this site
+# but I use this script for my personal site
+#rsync -ahvP _site/ root@$BT_DROPLET_IP:/var/www/html/ --delete --exclude=Covers --exclude=archive --exclude=*.sh

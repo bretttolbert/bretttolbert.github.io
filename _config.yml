@@ -1,0 +1,49 @@
+title: Brett Tolbert
+description: ©2026 Brett Tolbert. All Rights Reserved.
+email: bretttolbert@gmail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://bretttolbert.github.io"
+repository: bretttolbert/bretttolbert.github.io # used by the jekyll-github-metadata plugin
+github_username:  bretttolbert
+
+# theme: minima
+remote_theme: jekyll/minima
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-relative-links
+minima:
+  skin: dark # Or auto if you want it to switch with your system settings.
+
+relative_links:
+  enabled: true
+  collections: true
+
+markdown: kramdown
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+include:
+  - LICENSE
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - "assets/js/**/*.md"
+  - index.html
+  - "downloads/**/*.md"
+  - "assets/projects/**/*.md"
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
